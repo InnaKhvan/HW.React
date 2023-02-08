@@ -1,21 +1,19 @@
-import food from './food.json'
 
-export const Table = () => {
-    return (
-        <table className="table-bordered">
-            <caption>Меню</caption>
-            {food.map((item, index) => (
-                <tr className='line-data' data-index={index}>
 
-                    <td className='Name-food'>{item.name}</td>
-                    <td className='Ing-food'>Ингридиенты: {item.ingredients.map(name => (
-                        <li>
-                            {name}
-                        </li>))}</td>
-                    <td className='Price'>Цена: {item.price}</td>
-                    <td><img src={item.link} className="Picture" alt="picture" /></td>
-                </tr>
-            ))}
-        </table>
-    );
+export const FoodList = ({ items, onSelect }) => {
+    return items.map((item, index) =>
+        <div key = {`number-${index}`} className='flex justify-between flex-col shadow-xl shadow-sky-900 w-1/4 m-5 p-4 cursor-pointer rounded-lg border-sky-900 bg-cyan-400 md: w-5/6'>
+            <div className='flex justify-center'>{item.name}</div>
+            <div className='list-none'><h2>Ингридиенты: </h2>{item.ingredients.map(name => (
+                <li>
+                    {name}
+                </li>))}</div>
+            <div className='flex justify-center'>Цена: {item.price}</div>
+            <div><img src={item.link} className='flex justify-center rounded-lg' alt="picture" /></div>
+            <button onClick={() => onSelect(item)} className="flex justify-center bg-cyan-200 p-2 m-2 rounded-lg hover:bg-slate-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+                Добавить</button></div>
+
+    )
 }
