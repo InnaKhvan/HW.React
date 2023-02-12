@@ -1,11 +1,7 @@
-import Basket from './components/basket';
 import logo from './logo.png';
 import adress from './Земля.jpg';
-// import onItemSelect from './App.js'
-// import Basket from './components/basket';
-// import basketItems from './App.js'
 
-function Header (props){
+function Header ( ){
  
   return (
     <header className="flex flex-row bg-cyan-700 items-center border-neutral-800">

@@ -12,5 +12,6 @@ const Basket = ({ items }) => {
             }, 0)}</div>
         </>)
 }
+
 export default Basket;
 
