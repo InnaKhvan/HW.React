@@ -13,9 +13,9 @@ function App() {
         <div className="flex basis-3/4 flex-col md:flex-row">
           <FoodList items={food} />
         </div>
-        <div className="flex flex-col basis-1/5 bg-cyan-200 p-2 m-2 rounded-lg">
+        <div className="flex flex-col basis-1/5 bg-cyan-400 p-2 m-2 rounded-lg">
           Ваш выбор
-          <Basket items={basketItems} />
+          <Basket/>
         </div>
       </div>
     </div>

@@ -6,33 +6,31 @@ export const FoodList = ({ items  }) => {
   const onSelect = (item) => {
 dispatch(addToBasket(item))
   }
-  return items.map((item, index) => (
+  return items.map((item) => (
     <div
-      key={`num-${index}`}
       className="flex justify-between flex-col shadow-xl shadow-sky-900 w-1/4 m-5 p-4 cursor-pointer rounded-lg border-sky-900 bg-cyan-400 md: w-5/6"
     >
-      <div className="flex justify-center" key={`num.name-${index}`}>
+      <div className="flex justify-center" >
         {item.name}
       </div>
-      <div className="list-none" key={`num.ing-${index}`}>
+      <div className="list-none">
         <h2>Ингридиенты: </h2>
         {item.ingredients.map((name) => (
           <li>{name}</li>
         ))}
       </div>
-      <div className="flex justify-center" key={`num.price-${index}`}>
+      <div className="flex justify-center">
         Цена: {item.price}
       </div>
-      <div key={`num.img-${index}`}>
+      <div>
         <img
           src={item.link}
           className="flex justify-center rounded-lg"
-          alt="picture"
+          alt=""
         />
       </div>
       <button
         onClick={() => onSelect(item)}
-        key={`num.button-${index}`}
         className="flex justify-center bg-cyan-200 p-2 m-2 rounded-lg hover:bg-slate-500"
       >
         <svg
