@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 
-const Basket = ({ items }) => {
+const Basket = () => {  
+    const items = useSelector((state) => state.basket) 
     return (<>
         {items.map((item, index) => 
         (<div className="flex bg-cyan-300 p-2 m-2 rounded-lg" key={`card-${index}` }>
@@ -13,5 +15,5 @@ const Basket = ({ items }) => {
         </>)
 }
 
-export default Basket;
+export default Basket;  
 
