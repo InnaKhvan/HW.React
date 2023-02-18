@@ -1,4 +1,11 @@
-export const FoodList = ({ items, onSelect }) => {
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../store/slices/cardSlices";
+
+export const FoodList = ({ items  }) => {
+  const dispatch = useDispatch();
+  const onSelect = (item) => {
+dispatch(addToBasket(item))
+  }
   return items.map((item, index) => (
     <div
       key={`num-${index}`}
