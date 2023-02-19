@@ -1,5 +1,6 @@
 import { connect, useDispatch } from "react-redux";
 import { clearBasket, decreaseItemQty, increaseItemQty } from "../../store/slices/cardSlices";
+import TotalSum from "./totalSum";
 
 const Basket = ({ items }) => {
 
@@ -25,12 +26,9 @@ const Basket = ({ items }) => {
           </button>
         </div>
       ))}
-      <div className="flex bg-cyan-300 p-2 m-2 rounded-lg" >
-        <p>Итого: </p>
-        {items.reduce((sum, item) => {
-          sum += item.food.price * item.qty;
-          return sum;
-        }, 0)}
+      <div className="flex bg-cyan-300 p-2 m-2 justify-between rounded-lg">
+      <p>Итого:</p>
+      <TotalSum/>
       </div>
       <button
         className="flex justify-center bg-cyan-200 p-2 m-2 rounded-lg hover:bg-slate-500"
