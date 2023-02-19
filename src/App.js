@@ -3,6 +3,7 @@ import Header from "./components/header/header";
 import { FoodList } from "./components/foodList/foodList";
 import food from "./components/foodList/food.json";
 import Basket from "./components/basket/basket";
+import Discaunt from "./components/discount/discaunt";
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
           <Basket/>
         </div>
       </div>
+      <Discaunt/>
     </div>
   );
 }
