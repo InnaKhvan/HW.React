@@ -1,12 +1,14 @@
 import { connect, useDispatch } from "react-redux";
 import { clearBasket, decreaseItemQty, increaseItemQty } from "../../store/slices/cardSlices";
+import Discaunt from "../discount/discaunt";
 import TotalSum from "./totalSum";
 
-const Basket = ({ items }) => {
+const BasketComp = ({ items }) => {
 
   const dispatch = useDispatch();
   return (
-    <>
+    < div className="flex justify-center"> <div className="flex flex-col w-1/2 bg-cyan-400 p-2 m-2 rounded-lg">
+    Ваш выбор
       {items.map((item) => (
         <div
           className="flex bg-cyan-300 p-2 m-2 rounded-lg justify-between content-center"
@@ -36,7 +38,10 @@ const Basket = ({ items }) => {
       >
         Очистить
       </button>
-    </>
+      </div>
+      <div><Discaunt/></div>
+    </div>
+    
   );
 };
 
@@ -44,4 +49,4 @@ const connector = connect((state) => ({
   items: state.basket,
 }));
 
-export default connector(Basket) ;
+export default connector(BasketComp) ;
