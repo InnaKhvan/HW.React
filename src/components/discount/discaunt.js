@@ -1,5 +1,4 @@
-// import { useDispatch } from "react-redux";
-// import { addToBasketDis } from "../../store/slices/discauntSlices";
+
 
 const Discaunt = () => {
     
