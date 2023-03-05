@@ -1,7 +1,8 @@
 import "./index.css";
 import Header from "./components/header/header";
-import { FoodList } from "./components/foodList/foodList";
-import food from "./components/foodList/food.json";
+// import { FoodList } from "./components/foodList/foodList";
+// import food from "./components/foodList/food.json";
+import { Outlet } from "react-router-dom";
 
 function App() {
  
@@ -10,7 +11,8 @@ function App() {
       <Header/>
       <div className="flex flex-row">
         <div className="flex flex-col md:flex-row">
-          <FoodList items={food} />
+          {/* <FoodList items={food} /> */}
+          <Outlet />
         </div>
       </div>
     </div>

@@ -22,9 +22,9 @@ function Header() {
             />
           </svg>
         </button>
-        <a className="p-2">
-          <img src={logo} className="block w-20" alt="logo" />
-        </a>
+        <div className="block w-20 p-2">
+          <img src={logo} alt="logo" />
+        </div>
       </div>
 
       <div className="flex basis-1/6 rounded-full justify-center hover:bg-slate-500 cursor-pointer">

@@ -1,34 +1,26 @@
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToBasket } from "../../store/slices/cardSlices";
 
-export const FoodList = ({ items  }) => {
+export const FoodList = ({ items }) => {
   const dispatch = useDispatch();
   const onSelect = (item) => {
-dispatch(addToBasket(item))
-  }
+    dispatch(addToBasket(item));
+  };
   return items.map((item) => (
-    <div
-      className="flex justify-between flex-col shadow-xl shadow-sky-900 w-1/4 m-5 p-4 cursor-pointer rounded-lg border-sky-900 bg-cyan-400 md: w-5/6"
-    >
-      <div className="flex justify-center" >
-        {item.name}
-      </div>
-      <div className="list-none">
-        <h2>Ингридиенты: </h2>
-        {item.ingredients.map((name) => (
-          <li>{name}</li>
-        ))}
-      </div>
-      <div className="flex justify-center">
-        Цена: {item.price}
-      </div>
-      <div>
-        <img
-          src={item.link}
-          className="flex justify-center rounded-lg"
-          alt=""
-        />
-      </div>
+    <div className="flex justify-between flex-col shadow-xl shadow-sky-900 w-1/4 m-5 p-4 cursor-pointer rounded-lg border-sky-900 bg-cyan-400 md: w-5/6">
+      <Link to={`catalog/${item.id}`}>
+        <div className="flex justify-center">{item.name}</div>
+
+        <div className="flex justify-center">Цена: {item.price}</div>
+        <div>
+          <img
+            src={item.link}
+            className="flex justify-center rounded-lg"
+            alt=""
+          />
+        </div>
+      </Link>
       <button
         onClick={() => onSelect(item)}
         className="flex justify-center bg-cyan-200 p-2 m-2 rounded-lg hover:bg-slate-500"
