@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import CartProvider from "../cardProvaider";
-import CartWidgetComponent from "../CardWidjetComp";
 import logo from "./logo.png";
 
-function Header() {
+function Header({ sum }) {
   return (
     <header className="flex flex-row bg-cyan-700 items-center border-neutral-800">
       <div className="flex basis-1/2">
@@ -54,11 +52,7 @@ function Header() {
               />
             </svg>
           </div>
-          <div>
-            <CartProvider>
-              <CartWidgetComponent />
-            </CartProvider>
-          </div>
+          <div>{sum}</div>
         </Link>
       </div>
     </header>

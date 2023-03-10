@@ -25,9 +25,8 @@ let Basket = () => {
         </button>
       </Link>
       <CardProvaider>
-      <BasketComp />
+        <BasketComp />
       </CardProvaider>
-      
     </>
   );
 };

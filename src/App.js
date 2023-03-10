@@ -1,14 +1,14 @@
 import "./index.css";
 import Header from "./components/header/header";
-// import { FoodList } from "./components/foodList/foodList";
-// import food from "./components/foodList/food.json";
 import { Outlet } from "react-router-dom";
+import CartProvider from "./components/cardProvaider";
 
 function App() {
- 
   return (
     <div className="App">
-      <Header/>
+      <CartProvider>
+        <Header />
+      </CartProvider>
       <div className="flex flex-row">
         <div className="flex flex-col md:flex-row">
           <Outlet />

@@ -38,7 +38,7 @@ const BasketComp = ({ cart, sum, sumWithDisc }) => {
           {sum}
         </div>
         <div className="flex bg-cyan-300 p-2 m-2 justify-between rounded-lg">
-          Сумма с учетом скидки:  
+          Сумма с учетом скидки:
           {sumWithDisc}
         </div>
         <button
@@ -48,7 +48,9 @@ const BasketComp = ({ cart, sum, sumWithDisc }) => {
           Очистить
         </button>
       </div>
-      <div><Discaunt/></div>
+      <div>
+        <Discaunt />
+      </div>
     </div>
   );
 };
