@@ -5,8 +5,6 @@ import {
   increaseItemQty,
 } from "../../store/slices/cardSlices";
 import Discaunt from "../discount/discaunt";
-
-
 const BasketComp = ({ cart, sum, sumWithDisc }) => {
   const dispatch = useDispatch();
   return (
