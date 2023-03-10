@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BasketComp from "../../components/basketComp/basketComp";
+import CardProvaider from "../../components/cardProvaider";
 
 let Basket = () => {
   return (
@@ -23,7 +24,10 @@ let Basket = () => {
           Назад
         </button>
       </Link>
+      <CardProvaider>
       <BasketComp />
+      </CardProvaider>
+      
     </>
   );
 };

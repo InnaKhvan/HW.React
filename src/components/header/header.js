@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import TotalSum from "../basketComp/totalSum";
+import CartProvider from "../cardProvaider";
+import CartWidgetComponent from "../CardWidjetComp";
 import logo from "./logo.png";
 
 function Header() {
@@ -28,8 +29,12 @@ function Header() {
       </div>
 
       <div className="flex basis-1/6 rounded-full justify-center hover:bg-slate-500 cursor-pointer">
-        <Link to="about">
-        Главная</Link>
+        <Link to="about">Главная</Link>
+      </div>
+      <div className="flex basis-1/6 rounded-full justify-center hover:bg-slate-500 cursor-pointer">
+        <Link to="adress">
+          <button>Адрес</button>
+        </Link>
       </div>
       <div className="flex basis-1/6 rounded-full justify-around hover:bg-slate-500 cursor-pointer">
         <Link to="basket">
@@ -50,13 +55,10 @@ function Header() {
             </svg>
           </div>
           <div>
-            <TotalSum />
+            <CartProvider>
+              <CartWidgetComponent />
+            </CartProvider>
           </div>
-        </Link>
-      </div>
-      <div className="flex basis-1/6 rounded-full justify-center hover:bg-slate-500 cursor-pointer">
-        <Link to="adress">
-          <button>Адрес</button>
         </Link>
       </div>
     </header>

@@ -11,7 +11,6 @@ function App() {
       <Header/>
       <div className="flex flex-row">
         <div className="flex flex-col md:flex-row">
-          {/* <FoodList items={food} /> */}
           <Outlet />
         </div>
       </div>
